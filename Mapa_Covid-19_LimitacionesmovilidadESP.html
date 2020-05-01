@@ -31,7 +31,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var POBMAS = L.tileLayer.wms("http://localhost:8080/geoserver/test/wms?service=WMS", {
         layers: "POB",
-        format: 'image/jpeg',
+        format: 'image/gif',
         transparent: true,
         opacity: 0.4
       }).addTo(map);
@@ -41,7 +41,7 @@ var POBMAS = L.tileLayer.wms("http://localhost:8080/geoserver/test/wms?service=W
 //Capa pobmenor cargada en leflet 
 var POBMENOS = L.tileLayer.wms("http://localhost:8080/geoserver/TFM/wms?service=WMS", {
         layers: "POBMENOR",
-        format: 'image/jpeg',
+        format: 'image/gif',
         transparent: true,
         opacity: 0.4
       }).addTo(map);
