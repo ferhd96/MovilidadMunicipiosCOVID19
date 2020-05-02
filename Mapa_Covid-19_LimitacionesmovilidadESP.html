@@ -28,17 +28,20 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18
 }).addTo(map);
 
+ L.esri.featureLayer({
+    url: 'https://services7.arcgis.com/lTrEzFGSU2ayogtj/arcgis/rest/services/POB1/FeatureServer/0?token=GGX3GH1114kVn71bhZ-uz5GcJm6UX081OUjkhNi5VUB5QygpwNZtGkE8H5dppg_sghnc7sPRXN7wLxBHHccGdLv94fLNr0mrec-z7FKCqKhWSF21wzOram2CBU6XcQIdBp-NjNsYzc1l3BN2H-8GDACBL7EBLr2H3LfumlnuEQMpyB3sqLll4_JqrHq7_y6oa5fuiG6hhkCv8sYLSU8NyxuJWrnxwe4hNWU44SZr7ajJVq_VHtYJZsPRZGWLMoealnUMr2tjy1trP0PhQIMM2g..',
+     style: function (feature) {
+    return { color: "#F11818" }
+  }
+}).addTo(map);
 
-var POBMAS = L.tileLayer.wms("http://localhost:8080/geoserver/test/wms?service=WMS", {
-        layers: "POB"
-      }).addTo(map);
+ L.esri.featureLayer({
+    url: 'https://services7.arcgis.com/lTrEzFGSU2ayogtj/arcgis/rest/services/POBMENOR/FeatureServer/0?token=x4FomKSrXvab8-ZYW3wShb5hG08k-QtCb2TWrLX7qK6_wMPUrC6BiHQ5NTSLJ_jZe46Np5ACSWujg5sK6HyERZVaaDdboV_VAagV-OYFzTWHKEtVyJCx6vGRMUEOx3q6ioSo4hJEiPdqVLVnm619nNCVyDRhn30FN1hIy8psFoqCdA5XeuIdMgMg0noKNbXa284C3NOHT2lDs01GFMqvQhvwDM8s-AxURmbKwNVOX6QOaPUwe9H0WzPMLHtj8WGmZFP1WuarPzNAwX9tcEYAWg..',
+     style: function (feature) {
+    return { color: "#21C915" }
+  }
+}).addTo(map);
 
-
-
-//Capa pobmenor cargada en leflet 
-var POBMENOS = L.tileLayer.wms("http://localhost:8080/geoserver/TFM/wms?service=WMS", {
-        layers: "POBMENOR",
-      }).addTo(map);
 
 //Función de cirunferencia cuando se clicka en el mapa 
 var clickCircle;
